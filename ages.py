@@ -1,0 +1,70 @@
+"""
+    Write a Python program that uses if-else statements and:
+
+Asks the user for their age and converts the input to an integer.
+Check to see if the user is old enough to drive.
+Check to see if the user can vote.
+Check to see if the user can legally buy alcohol.
+Check to see if the user is eligible for a senior discount.
+Prints all the results on the screen, ensuring the output is straightforward and user-friendly.
+    """
+
+age = int(input("How old are you? (Please answer in whole numbers): "))
+
+if age <= 1:
+    print("Awww! Who's a cute widdle baby? Who needs theiw pacifiew? You do! You do!")
+
+elif age <= 2:
+    print("Your little legs are trembling beneath your own weight. Can you even walk?")
+
+elif age <= 4:
+    print("I think you're old enough to start learning taekwondo...")
+
+elif age == 5:
+    print("The big 5! You're now old enough to start preschool!")
+
+elif age == 6:
+    print("Welcome to kindergarten!")
+
+elif age <= 13:
+    print("Oh, a middle schooler, huh? LMAO, good luck.")
+
+elif age <= 15:
+    print("Oh no, you're in high school now. Brace yourself...")
+
+elif age <= 17:
+    print("Congratulations! Now you're old enough to legally crash a vehicle!")
+
+elif age <= 20:
+    print("Oof. Becoming a legal adult AND voting rights? You get the double whammy...")
+
+elif age <= 25:
+    print("Oh, wow, you're old. I can't believe you can legally buy alcohol...")
+
+elif age <= 30:
+    print("Now you're responsible for your own health insurance! Welcome to the real world :)")
+
+elif age <= 40:
+    print("Oh, people are DEFINITELY teasing you for being old now. Have fun with that revelation. Definitely not a senior.")
+
+elif age <= 50:
+    print("Now you're getting ACTUALLY middle-aged. Sorry, bud, no hard feelings. You're not a senior, though, so that's a plus!")
+
+elif age <= 60:
+    print("Congrats on making it over the hill. Still not eligible for the senior discount, though...")
+
+elif age < 65:
+    print("Oooh, so close! You're just barely shy of that senior discount!")
+
+elif age <= 84:
+    print("Congratulations! You now qualify as a senior citizen. Get dat bank!")
+
+elif age <= 100:
+    print("I submit myself to you, wise elder. Teach me your ways.")
+
+elif age <= 122:
+    print("Whoa. You are a certified granny. Enjoy your retirement!")
+
+else:
+    print(
+        f"...are... are you really {age}? Either you're some being beyond human comprehension, or that's just a straight up lie.")
