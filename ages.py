@@ -9,7 +9,12 @@ Check to see if the user is eligible for a senior discount.
 Prints all the results on the screen, ensuring the output is straightforward and user-friendly.
     """
 
+# I hope you don't mind my silly comments. Originally I wanted to play around with
+
 age = int(input("How old are you? (Please answer in whole numbers): "))
+
+if age <= 0:
+    print("Wow, so you just don't exist, huh? That or you're a time traveler. Congrats on breaking the time stream or whatever.")
 
 if age <= 1:
     print("Awww! Who's a cute widdle baby? Who needs theiw pacifiew? You do! You do!")
@@ -67,4 +72,5 @@ elif age <= 122:
 
 else:
     print(
-        f"...are... are you really {age}? Either you're some being beyond human comprehension, or that's just a straight up lie.")
+        f"Are... are you really {age}? Either you're some being beyond human comprehension, or that's just a straight up lie.")
+    print("\n...and yes, you still qualify for that senior discount.")
