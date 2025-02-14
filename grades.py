@@ -11,6 +11,12 @@
 score = float(
     input("What was the numerical score you got on your most recent test?: "))
 
+if score > 115:
+    print("Please input a valid score from 0-100. You may have up to 15 points of extra credit.")
+
+if score < 0:
+    print("Please input a valid score from 0-100. You may have up to 15 points of extra credit.")
+
 if score >= 100:
     grade = str("A+")
 
