@@ -39,9 +39,11 @@ elif age <= 15:
 
 elif age <= 17:
     print("Congratulations! Now you're old enough to legally crash a vehicle!")
+    print("In all seriousness, you are now old enough to legally obtain a driver's license.")
 
 elif age <= 20:
     print("Oof. Becoming a legal adult AND voting rights? You get the double whammy...")
+    print("Make wise voting decisions from now on.")
 
 elif age <= 25:
     print("Oh, wow, you're old. I can't believe you can legally buy alcohol...")
