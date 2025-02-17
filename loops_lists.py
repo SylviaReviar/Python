@@ -16,7 +16,7 @@
 #     print(number)
 #     number -= 1  # same as number = number - 1
 
-# for num in range(10, -1, -1):
+# for num in range(10, -1):
 #     if num == 5:
 #         continue
 #     if num == 3:

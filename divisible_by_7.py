@@ -19,3 +19,10 @@
     continue:
         Skip the rest of the current iteration and move on to the next.
     """
+
+for i in range(1, 300):
+    if i % 7 != 0:
+        continue
+    print(i)
+
+# I... I think that's it?? That was fast. Thank you Meri :D
