@@ -50,17 +50,17 @@ else:
 
 if age < 21:
     print("You are not old enough to legally buy or drink alcohol yet.")
-    if age <= 20:
-        print("Oof. Becoming a legal adult AND voting rights? You get the double whammy...")
-        print("Make wise voting decisions from now on.")
-    elif age <= 25:
-        print("Oh, wow, you're old. I can't believe you can legally buy alcohol...")
 else:
     print("You are legally old enough to drink and buy alcohol.")
 
 if age < 65:
     print("You are not eligible for a senior discount.")
-    if age <= 30:
+    if age <= 20:
+        print("Oof. Becoming a legal adult AND voting rights? You get the double whammy...")
+        print("Make wise voting decisions from now on.")
+    elif age <= 25:
+        print("Oh, wow, you're old. I can't believe you can legally buy alcohol...")
+    elif age <= 30:
         print("Now you're responsible for your own health insurance! Welcome to the real world :)")
 
     elif age <= 40:
