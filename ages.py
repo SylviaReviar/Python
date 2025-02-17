@@ -9,7 +9,7 @@ Check to see if the user is eligible for a senior discount.
 Prints all the results on the screen, ensuring the output is straightforward and user-friendly.
     """
 
-# I hope you don't mind my silly comments. Originally I wanted to play around with
+# please. please tell me it's all fixed. please. I beg.
 
 age = int(input("How old are you? (Please answer in whole numbers): "))
 
@@ -18,6 +18,21 @@ if age <= 0:
 
 if age < 16:
     print("You are not old enough to obtain a driver's license yet.")
+else:
+    print("You are old enough to obtain a driver's license.")
+
+if age < 18:
+    print("You are not old enough to vote yet.")
+else:
+    print("You are old enough to vote.")
+
+if age < 21:
+    print("You are not old enough to legally buy or drink alcohol yet.")
+else:
+    print("You are legally old enough to drink and buy alcohol.")
+
+if age < 65:
+    print("You are not eligible for a senior discount.")
     if age <= 1:
         print("Awww! Who's a cute widdle baby? Who needs theiw pacifiew? You do! You do!")
 
@@ -40,22 +55,7 @@ if age < 16:
         print("Oh no, you're in high school now. Brace yourself...")
     elif age <= 17:
         print("Congratulations! Now you're old enough to legally crash a vehicle!")
-else:
-    print("You are old enough to obtain a driver's license.")
-
-if age < 18:
-    print("You are not old enough to vote yet.")
-else:
-    print("You are old enough to vote.")
-
-if age < 21:
-    print("You are not old enough to legally buy or drink alcohol yet.")
-else:
-    print("You are legally old enough to drink and buy alcohol.")
-
-if age < 65:
-    print("You are not eligible for a senior discount.")
-    if age <= 20:
+    elif age <= 20:
         print("Oof. Becoming a legal adult AND voting rights? You get the double whammy...")
         print("Make wise voting decisions from now on.")
     elif age <= 25:
