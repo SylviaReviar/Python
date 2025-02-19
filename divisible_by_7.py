@@ -20,7 +20,7 @@
         Skip the rest of the current iteration and move on to the next.
     """
 
-for i in range(1, 300):
+for i in range(1, 301):
     if i % 7 != 0:
         continue
     print(i)
