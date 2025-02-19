@@ -30,11 +30,30 @@ phone = [8, 6, 7, 5, 3, 0, 9]
 jenny = phone[0:3]
 print(f"Sliced: {jenny}")
 
+if 3 in phone:
+    print(f"3 is in the phone number.")
+
+if 2 in phone:
+    print(f"2 is in the phone number.")
+else:
+    print(f"2 is not in the phone number.")
+
 ages.sort()
 print(f"Sorted: {ages}/n")
 
 ages.reverse()
 print(f"Reversed: {ages}/n")
+
+total = sum(ages)
+average = total / len(ages)
+
+print(f"The average age is: {average:.1f}")
+
+delinquent_accounts = [1056, 2008, 3278, 4189]
+# Find the index of 2008 in the list
+for i in range(len(delinquent_accounts)):
+    if delinquent_accounts[i] == 2008:
+        print("The account number 2008 is in the index," i)
 
 # For loops sample
 # print("Enter in all ten of the ages as whole numbers between 1 and 120. Start with the first 5.")

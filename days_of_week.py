@@ -22,12 +22,13 @@ days_of_week = ["Sunday", "Monday", "Tuesday",
 
 # Then it says to initialize an empty list... How would I do that again?
 
-steps = []
+weekly_steps = []
 
 # Okay. That should do it. Next is user input... Using a loop? Oof, okay, let's give this a shot...
 
 for day in days_of_week:
-    int(input(f"How many steps did you take on {day}?: "))
+    steps = int(input(f"How many steps did you take on {day}?: "))
+    weekly_steps.append(steps)
 
 # ...I don't think that's gonna work -_-;;;
 # I need to figure out how--
