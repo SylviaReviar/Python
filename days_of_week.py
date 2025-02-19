@@ -27,9 +27,21 @@ weekly_steps = []
 # Okay. That should do it. Next is user input... Using a loop? Oof, okay, let's give this a shot...
 
 for day in days_of_week:
-    steps = int(input(f"How many steps did you take on {day}?: "))
+    steps = int(input(f"\nHow many steps did you take on {day}?: "))
     weekly_steps.append(steps)
+    print(f"So, on {day}, you took {steps} steps.")
+    print(f"Steps taken weekly: {weekly_steps}")
 
 # ...I don't think that's gonna work -_-;;;
 # I need to figure out how--
 # Never mind! Thanks to the notes, I think I've got it?
+# Okay, now to append things from the user input. Let's test it.
+
+# So now I've found a way to store AND display the steps. Now I should calculate the sum, right?
+
+total_steps = sum(weekly_steps)
+print(f"Total steps taken this week: {total_steps}")
+mean_steps = total_steps / len(days_of_week)
+print(f"Average steps taken per day this week: {mean_steps:.1f}")
+
+# I think that might be it. Please let me know if I got anything wrong!
