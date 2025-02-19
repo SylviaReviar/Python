@@ -20,13 +20,11 @@ while cards > 1:
         cards -= 1
         print(
             f"Take one down, trade it around,\nOnly {cards} Duel Monsters card on the wall!")
-    if cards == 1:
-        print(
-            f"\nOnly {cards} Duel Monsters card on the wall,\nOnly {cards} Duel Monsters cards!")
-        cards -= 1
-        print(
-            f"Take one down, trade it around,\nNow there's no Duel Monsters cards on the wall!")
-        break
+
+print(
+    f"\nOnly {cards} Duel Monsters card on the wall,\nOnly {cards} Duel Monsters cards!")
+print(
+    f"Take one down, trade it around,\nNow there's no Duel Monsters cards on the wall!")
 
 # I want to stop the loop after it hits 0, but interrupt it so that instead of printing out...
 # "0 Duel Monsters cards on the wall!"
