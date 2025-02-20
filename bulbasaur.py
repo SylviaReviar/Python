@@ -41,14 +41,16 @@ for i in range(1, 6):
 
 # Anyway. The assignment says the names should be put into lowercase. Let's try that.
 
-your_meow_meows = [your_meow_meows.lower() for meow_meow in your_meow_meows]
+your_meow_meows = [meow_meow.lower() for meow_meow in your_meow_meows]
 
 swapped = True
 while swapped:
     swapped = False
     for i in range(len(your_meow_meows) - 1):
         if your_meow_meows[i] > your_meow_meows[i + 1]:
-            your_meow_meows[i], your_meow_meows[i + 1] = names[i + 1], names[i]
+            your_meow_meows[i], your_meow_meows[i +
+                                                1] = your_meow_meows[i + 1], your_meow_meows[i]
+            swapped = True
 print(your_meow_meows)
 
 # She says this should sort it, but I just copied down what was written on the assignment...
@@ -57,3 +59,33 @@ print(your_meow_meows)
 # Why is it true? And why make it false after making it true?
 
 # Let me go home and figure this out.
+
+# According to the exercise we did in class, the idea of bubble sorting is to swap in order constantly until they're in the right order.
+# So... unit[i] > unit[i + 1] must be a check to compare the two and figure out where they go.
+# But what is it checking for? I don't think I set a standard of what to check for.
+# Is the default for Python sorting strings to be in alphabetical order?
+
+# Let's try running it and analyze how it prints.
+# Okay, there's an error when I try to lowercase the names...
+# Found the problem: I used the wrong variable. Let's try again.
+
+# Oh! It lowercased all their names, and ordered them... wait. That's weird.
+# The order is ['jack', 'crow', 'akiza', 'luna', 'yusei']. That's not alphabetical.
+
+# I don't understand why it ordered them like that. If it was based on the number of letters in their name, Akiza should've been at the end with Yusei.
+# If it was in alphabetical order, it should've gone "Akiza," "Crow," "Jack," "Luna," "Yusei".
+# I don't understand Bulbasauring :(
+# But I can reverse the list. Let's at least do that much, turn it in, and wait for Meri to address my mistakes ^^;
+
+# WAIT I FORGOT SOMETHING! I added it at the end there: swap = True
+# What if that fixes it?! I don't know how, but it might! Let's test it!
+
+# YES!! Okay, that somehow did it. I don't know how, but it did. swap = True must've made it ensure that the actual swap happened,
+# so the reorganizing could work properly. Not just confirming it, but like...? ??? idk
+# I'll have to ask again next week or over inbox messages...;;;
+
+# anyway, NOW let's reverse it.
+your_meow_meows.reverse()
+print(your_meow_meows)
+
+# Ayyyy! It worked! I only have a billion questions left over, though... I'll need to analyze the code more thoroughly with help.
