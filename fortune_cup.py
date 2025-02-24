@@ -14,4 +14,11 @@
     """
 
 # Okay. First, let's create the list. It should have 20 seats numbered 1-20.
-fortune_seats = [""]
+fortune_seats = ["1", "2", "3", "4", "5", "6", "7", "8", "9",
+                 "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
+
+# I hope that works. Next, let's print them so the customer can see the available seats.
+
+print(f"Seats available: {fortune_seats}")
+
+# Okay. Next, I need a way to check for valid inputs...
