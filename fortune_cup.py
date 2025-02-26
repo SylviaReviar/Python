@@ -19,6 +19,13 @@ fortune_seats = ["1", "2", "3", "4", "5", "6", "7", "8", "9",
 
 # I hope that works. Next, let's print them so the customer can see the available seats.
 
+print("Welcome to the Fortune Cup!")
+print("If you're reading this, you've won a free ticket, or you are purchasing a new one.")
+print("We will display the list of available seats for you. Choose which one you want!")
+print("When you're finished choosing, please enter \"0\" to end the selection process.")
+print("Now then...")
+
 print(f"Seats available: {fortune_seats}")
 
 # Okay. Next, I need a way to check for valid inputs...
+chosen_seats = input("Please select the seat you want: ")
