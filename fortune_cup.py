@@ -14,8 +14,9 @@
     """
 
 # Okay. First, let's create the list. It should have 20 seats numbered 1-20.
-fortune_seats = ["1", "2", "3", "4", "5", "6", "7", "8", "9",
-                 "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
+fortune_seats = [1, 2, 3, 4, 5, 6, 7, 8, 9,
+                 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+taken_seats = []
 
 # I hope that works. Next, let's print them so the customer can see the available seats.
 
@@ -25,7 +26,19 @@ print("We will display the list of available seats for you. Choose which one you
 print("When you're finished choosing, please enter \"0\" to end the selection process.")
 print("Now then...")
 
-print(f"Seats available: {fortune_seats}")
+vacant_seats = len(fortune_seats)
 
 # Okay. Next, I need a way to check for valid inputs...
-chosen_seats = input("Please select the seat you want: ")
+chosen_seats = 1
+
+while chosen_seats != 0:
+    print(f"There are {vacant_seats} seats available.")
+    chosen_seats = int(
+        input("Please enter which seat you would like. When you're done, press 0: "))
+    if chosen_seats > 20 or chosen_seats < 0:
+        print(
+            "That is not a valid seat number. Please try again. Enter 0 when you're done.")
+    taken_seats.append(fortune_seats[chosen_seats - 1])
+    fortune_seats.pop(chosen_seats - 1)
+    print(f"Currently available seats: {fortune_seats}")
+    print(f"Seats you have chosen: {taken_seats}")
