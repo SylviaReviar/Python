@@ -31,19 +31,23 @@ print("Now then...")
 
 while True:
     vacant_seats = len(fortune_seats)
-    print(f"There are {vacant_seats} seats available.")
-    print("These are the available seats. Choose the number when selecting your seat. ")
+    print(f"\nThere are {vacant_seats} seats available.")
+    print("Please enter the correct seat number to choose your seat.")
     print(f"Currently available seats: {fortune_seats}")
     chosen_seats = int(
         input("Please enter which seat you would like. When you're done, press 0: "))
     if chosen_seats == 0:
-        print("Congratulations message here")
+        print(
+            f"\nYou have chosen these seats: {taken_seats}. Thank you for choosing New Domino City Stadium!")
+        print("Enjoy the Fortune Cup!")
+        print("Get ready, get set...")
+        print("Turbo Duel!")
         break
     elif chosen_seats > 20 or chosen_seats < 0:
         print(
             "That is not a valid seat number. Please try again. Enter 0 when you're done.")
     elif chosen_seats in taken_seats:
-        print("That seat is already taken. Please select again.")
+        print("That seat is already taken. Please try again.")
     else:
         taken_seats.append(chosen_seats)
         fortune_seats.remove(chosen_seats)
