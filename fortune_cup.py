@@ -26,25 +26,30 @@ print("We will display the list of available seats for you. Choose which one you
 print("When you're finished choosing, please enter \"0\" to end the selection process.")
 print("Now then...")
 
-vacant_seats = len(fortune_seats)
-
 # Okay. Next, I need a way to check for valid inputs...
-chosen_seats = 1
+# chosen_seats = 1
 
-while chosen_seats != 0:
+while True:
+    vacant_seats = len(fortune_seats)
     print(f"There are {vacant_seats} seats available.")
+    print("These are the available seats. Choose the number when selecting your seat. ")
+    print(f"Currently available seats: {fortune_seats}")
     chosen_seats = int(
         input("Please enter which seat you would like. When you're done, press 0: "))
-    if chosen_seats > 20 or chosen_seats < 0:
+    if chosen_seats == 0:
+        print("Congratulations message here")
+        break
+    elif chosen_seats > 20 or chosen_seats < 0:
         print(
             "That is not a valid seat number. Please try again. Enter 0 when you're done.")
-    taken_seats.append(fortune_seats[chosen_seats - 1])
-    fortune_seats.pop(chosen_seats - 1)
-    print(f"Currently available seats: {fortune_seats}")
-    print(f"Seats you have chosen: {taken_seats}")
+    elif chosen_seats in taken_seats:
+        print("That seat is already taken. Please select again.")
+    else:
+        taken_seats.append(chosen_seats)
+        fortune_seats.remove(chosen_seats)
+        print(f"Seats you have chosen: {taken_seats}")
 
 # Current errors: Selecting 0 adds Seat 20 to the list of chosen seats.
-# Also: I want to add a message when you've pressed 0 that says "Your chosen seats are: {taken_seats}. Thank you and enjoy the Fortune Cup!"
 # This will make it better for the user experience, and tie up the program in a neat bow.
 # I know I'm supposed to figure this stuff out on my own now, but...
 # I'm struggling to grasp the order of logic. It makes sense, but it's still hard.
