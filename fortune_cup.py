@@ -42,3 +42,10 @@ while chosen_seats != 0:
     fortune_seats.pop(chosen_seats - 1)
     print(f"Currently available seats: {fortune_seats}")
     print(f"Seats you have chosen: {taken_seats}")
+
+# Current errors: Selecting 0 adds Seat 20 to the list of chosen seats.
+# Also: I want to add a message when you've pressed 0 that says "Your chosen seats are: {taken_seats}. Thank you and enjoy the Fortune Cup!"
+# This will make it better for the user experience, and tie up the program in a neat bow.
+# I know I'm supposed to figure this stuff out on my own now, but...
+# I'm struggling to grasp the order of logic. It makes sense, but it's still hard.
+# This is what I'd like to go over with Meri tomorrow.
