@@ -49,3 +49,7 @@ while chosen_seats != 0:
 # I know I'm supposed to figure this stuff out on my own now, but...
 # I'm struggling to grasp the order of logic. It makes sense, but it's still hard.
 # This is what I'd like to go over with Meri tomorrow.
+
+# Is it possible to do something like "if chosen_seats = seat in taken_seats:"? There's supposed to be a check as well for taken seats...
+# I don't know how I would even go about writing something like that.
+# I need help learning how to do this in the first place. Once I've finished learning from the tutoring session, I'll see if I can touch it up a bit.
