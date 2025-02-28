@@ -53,3 +53,8 @@ while chosen_seats != 0:
 # Is it possible to do something like "if chosen_seats = seat in taken_seats:"? There's supposed to be a check as well for taken seats...
 # I don't know how I would even go about writing something like that.
 # I need help learning how to do this in the first place. Once I've finished learning from the tutoring session, I'll see if I can touch it up a bit.
+
+# I would like the assistance to be listed as such: "Use these functions to make this happen." Having hints like that would be super helpful.
+# I was able to figure out how to do it before with those hints. I get that I should be at a point where my hand isn't being held anymore...
+# But I'm still struggling to grasp the functions which is why I need it still. I feel inadequate being unable to just "figure it out" on my own.
+# Hence why I haven't written any code yet. I don't know where to start. Once I do know, I'd like to try it myself, then ask for help again.
