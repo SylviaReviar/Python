@@ -29,6 +29,16 @@
 
 
 def bmi_calc():
+
+    def convert():
+        user_height = float(input("Please enter your height in inches(in)): "))
+        user_weight = float(input("Please enter your weight in pounds(lb): "))
+
+    convert()
+
+    nonlocal user_height
+    nonlocal user_weight
+
     global_height = user_height * 0.0254
     global_weight = user_weight * 0.453592
 
@@ -49,10 +59,4 @@ def bmi_calc():
         print("Class 3 obese? Well, BMI is often wrong anyway. Don't take it personally.")
 
 
-def convert():
-    user_height = float(input("Please enter your height in inches(in)): "))
-    user_weight = float(input("Please enter your weight in pounds(lb): "))
-    bmi_calc()
-
-
-convert()
+bmi_calc()
