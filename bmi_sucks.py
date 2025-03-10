@@ -31,16 +31,14 @@
 def bmi_calc():
 
     def convert():
-        user_height = float(input("Please enter your height in inches(in)): "))
+        user_height = float(input("Please enter your height in inches(in): "))
         user_weight = float(input("Please enter your weight in pounds(lb): "))
+        global_height = user_height * 0.0254
+        global_weight = user_weight * 0.453592
+
+        return global_height and global_weight
 
     convert()
-
-    nonlocal user_height
-    nonlocal user_weight
-
-    global_height = user_height * 0.0254
-    global_weight = user_weight * 0.453592
 
     user_bmi = global_weight / (global_height ** 2)
     print(f"Your BMI is: {user_bmi}")
