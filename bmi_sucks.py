@@ -28,20 +28,11 @@
 # Also I had ChatGPT explain scope to me because I didn't understand the video on the assignment.
 
 
-def bmi_calc():
+def main():
+    height_m, weight_kg = convert()
 
-    def convert():
-        user_height = float(input("Please enter your height in inches(in): "))
-        user_weight = float(input("Please enter your weight in pounds(lb): "))
-        global_height = user_height * 0.0254
-        global_weight = user_weight * 0.453592
-
-        return global_height and global_weight
-
-    convert()
-
-    user_bmi = global_weight / (global_height ** 2)
-    print(f"Your BMI is: {user_bmi}")
+    user_bmi = weight_kg / (height_m ** 2)
+    print(f"Your BMI is: {user_bmi:.2f}")
     if user_bmi < 18.5:
         print(
             "According to the INCREDIBLY reliable chart that is BMI, you are underweight.")
@@ -57,4 +48,13 @@ def bmi_calc():
         print("Class 3 obese? Well, BMI is often wrong anyway. Don't take it personally.")
 
 
-bmi_calc()
+def convert():
+    user_height = float(input("Please enter your height in inches(in): "))
+    user_weight = float(input("Please enter your weight in pounds(lb): "))
+    height_m = user_height * 0.0254
+    weight_kg = user_weight * 0.453592
+
+    return height_m, weight_kg
+
+
+main()
