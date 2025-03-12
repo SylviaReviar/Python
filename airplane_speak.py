@@ -13,31 +13,42 @@
         - And, naturally, test the program to ensure it works.
     """
 
-nato_alphabet = {
-    "A": "Alpha",
-    "B": "Bravo",
-    "C": "Charlie",
-    "D": "Delta",
-    "E": "Echo",
-    "F": "Foxtrot",
-    "G": "Golf",
-    "H": "Hotel",
-    "I": "India",
-    "J": "Juliette",
-    "K": "Kilo",
-    "L": "Lima",
-    "M": "Mike",
-    "N": "November",
-    "O": "Oscar",
-    "P": "Papa",
-    "Q": "Quebec",
-    "R": "Romeo",
-    "S": "Sierra",
-    "T": "Tango",
-    "U": "Uniform",
-    "V": "Victor",
-    "W": "Whiskey",
-    "X": "X-Ray",
-    "Y": "Yankee",
-    "Z": "Zulu"
-}
+
+def main():
+    nato_alphabet = {
+        "A": "Alpha",
+        "B": "Bravo",
+        "C": "Charlie",
+        "D": "Delta",
+        "E": "Echo",
+        "F": "Foxtrot",
+        "G": "Golf",
+        "H": "Hotel",
+        "I": "India",
+        "J": "Juliette",
+        "K": "Kilo",
+        "L": "Lima",
+        "M": "Mike",
+        "N": "November",
+        "O": "Oscar",
+        "P": "Papa",
+        "Q": "Quebec",
+        "R": "Romeo",
+        "S": "Sierra",
+        "T": "Tango",
+        "U": "Uniform",
+        "V": "Victor",
+        "W": "Whiskey",
+        "X": "X-Ray",
+        "Y": "Yankee",
+        "Z": "Zulu"
+    }
+
+    message = input(
+        "This is your pilot speaking! Please leave your one-worded message here and I will translate it for you into the NATO alphabet: ")
+    message = message.upper()
+    for letter in message:
+        print(nato_alphabet[letter])
+
+
+main()
