@@ -21,14 +21,15 @@
 
 def square_number():
     while True:
-        number = int(input("Please enter a whole number to square: "))
         try:
+            number = int(input("Please enter a whole number to square: "))
             squared_number = int(number) ** 2
-        except TypeError or ValueError:
+        except ValueError:
             # I want to make this loop back. I dunno if I can though?
             print("That's not a valid number. Please try again.")
         else:
             print(f"The square of {number} is {squared_number}.")
+            break
 
 
 square_number()
