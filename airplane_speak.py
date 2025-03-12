@@ -14,41 +14,55 @@
     """
 
 
-def main():
-    nato_alphabet = {
-        "A": "Alpha",
-        "B": "Bravo",
-        "C": "Charlie",
-        "D": "Delta",
-        "E": "Echo",
-        "F": "Foxtrot",
-        "G": "Golf",
-        "H": "Hotel",
-        "I": "India",
-        "J": "Juliette",
-        "K": "Kilo",
-        "L": "Lima",
-        "M": "Mike",
-        "N": "November",
-        "O": "Oscar",
-        "P": "Papa",
-        "Q": "Quebec",
-        "R": "Romeo",
-        "S": "Sierra",
-        "T": "Tango",
-        "U": "Uniform",
-        "V": "Victor",
-        "W": "Whiskey",
-        "X": "X-Ray",
-        "Y": "Yankee",
-        "Z": "Zulu"
-    }
+NATO_ALPHABET = {
+    "A": "Alpha",
+    "B": "Bravo",
+    "C": "Charlie",
+    "D": "Delta",
+    "E": "Echo",
+    "F": "Foxtrot",
+    "G": "Golf",
+    "H": "Hotel",
+    "I": "India",
+    "J": "Juliette",
+    "K": "Kilo",
+    "L": "Lima",
+    "M": "Mike",
+    "N": "November",
+    "O": "Oscar",
+    "P": "Papa",
+    "Q": "Quebec",
+    "R": "Romeo",
+    "S": "Sierra",
+    "T": "Tango",
+    "U": "Uniform",
+    "V": "Victor",
+    "W": "Whiskey",
+    "X": "X-Ray",
+    "Y": "Yankee",
+    "Z": "Zulu"
+}
 
-    message = input(
-        "This is your pilot speaking! Please leave your one-worded message here and I will translate it for you into the NATO alphabet: ")
+
+def translate_to_nato(message):
     message = message.upper()
     for letter in message:
-        print(nato_alphabet[letter])
+        print(NATO_ALPHABET[letter])
+
+
+def get_message():
+    while True:
+        try:
+            message = input(
+                "This is your pilot speaking! Please leave your one-worded message here and I will translate it for you into the NATO alphabet: ")
+        except:
+            print("You're hilarious. But I'm funnier. Try again.")
+        return message
+
+
+def main():
+    message = get_message()
+    translate_to_nato(message)
 
 
 main()
