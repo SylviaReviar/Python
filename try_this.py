@@ -24,7 +24,7 @@ def square_number():
         try:
             number = int(input("Please enter a whole number to square: "))
             squared_number = int(number) ** 2
-        except ValueError:
+        except:
             # I want to make this loop back. I dunno if I can though?
             print("That's not a valid number. Please try again.")
         else:
