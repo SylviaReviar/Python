@@ -27,6 +27,11 @@
 
 # Also I had ChatGPT explain scope to me because I didn't understand the video on the assignment.
 
+# I asked my dad for help with this assignment. My dad doesn't know Python, but he knows a bit of coding regardless.
+# After I tried to insist I'd ask the professor for help after a while, he really REALLY wanted to continue helping me fix the code.
+# So I admit I didn't fully do this by myself.
+# I didn't know how the return functions worked, and how to make it so the nested functions received that returned value.
+
 
 def bmi_calc():
 
@@ -36,12 +41,14 @@ def bmi_calc():
         global_height = user_height * 0.0254
         global_weight = user_weight * 0.453592
 
-        return global_height and global_weight
+        return global_height, global_weight
+
+    global_height, global_weight = convert()
 
     convert()
 
     user_bmi = global_weight / (global_height ** 2)
-    print(f"Your BMI is: {user_bmi}")
+    print(f"Your BMI is: {user_bmi:.2f}")
     if user_bmi < 18.5:
         print(
             "According to the INCREDIBLY reliable chart that is BMI, you are underweight.")
