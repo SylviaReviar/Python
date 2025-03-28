@@ -64,4 +64,13 @@ def bmi_calc():
         print("Class 3 obese? Well, BMI is often wrong anyway. Don't take it personally.")
 
 
-bmi_calc()
+def convert():
+    user_height = float(input("Please enter your height in inches(in): "))
+    user_weight = float(input("Please enter your weight in pounds(lb): "))
+    height_m = user_height * 0.0254
+    weight_kg = user_weight * 0.453592
+
+    return height_m, weight_kg
+
+
+main()
