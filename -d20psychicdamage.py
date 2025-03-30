@@ -61,8 +61,6 @@ def main():
             magic_8_ball()
         else:
             print("Oh, um, that's not really an answer... Let me ask again.")
-            user_action = input(
-                "Would you like to ask me a question? Please answer yes or no: ")
 
 
 main()
