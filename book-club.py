@@ -31,12 +31,32 @@ def menu():
     return choice
 
 
+def add_more():
+
+    print("Would you like to add another book?")
+    print("  1. Yes")
+    print("  2. No")
+    more_books = int(input("Add another?: "))
+
+    while True:
+        if more_books == 1:
+            continue
+        elif more_books == 2:
+            print("Your list is...")
+            break
+        else:
+            print("That's not a valid answer. Please try again.")
+
+    return more_books
+
+
 def main():
 
     choice = menu()
     library = []
+    more_books = 1
 
-    while True:
+    while more_books == 1:
         if choice == 2:
             print("See you next time!")
             break
@@ -46,10 +66,12 @@ def main():
             while len(library) < 11:
                 book = input("Okay! Please enter a book title: ")
                 library.append(book)
+                print(library)
+                more_books = add_more()
 
         else:
             print("I'm sorry, that's not a valid answer. Please try again.")
-            menu()
+            choice = menu()
 
 
 main()
