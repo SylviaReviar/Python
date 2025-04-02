@@ -26,9 +26,12 @@ def menu():
     print("   1. Yes")
     print("   2. No")
 
-    choice = int(input("Please enter 1 or 2: "))
-
-    return choice
+    try:
+        choice = int(input("Please enter 1 or 2: "))
+        return choice
+    except ValueError:
+        print("That's not a valid answer. please try again.")
+        menu()
 
 
 def add_more():
@@ -36,18 +39,24 @@ def add_more():
     print("Would you like to add another book?")
     print("  1. Yes")
     print("  2. No")
-    more_books = int(input("Add another?: "))
 
-    while True:
-        if more_books == 1:
-            continue
-        elif more_books == 2:
-            print("Your list is...")
-            break
-        else:
-            print("That's not a valid answer. Please try again.")
+    more_books = 0
 
-    return more_books
+    try:
+        while True:
+            more_books = int(input("Add another?: "))
+            if more_books == 1:
+                return more_books
+                break
+            elif more_books == 2:
+                return more_books
+                break
+            else:
+                print("That wasn't on the menu. Please try again.")
+                add_more()
+    except ValueError:
+        print("That's not a valid answer. Please try again.")
+        add_more()
 
 
 def main():
@@ -56,22 +65,35 @@ def main():
     library = []
     more_books = 1
 
-    while more_books == 1:
-        if choice == 2:
-            print("See you next time!")
-            break
-        elif choice == 1:
-            print("Let's get started.")
+    try:
+        while more_books == 1:
+            if choice == 2:
+                print("See you next time!")
+                break
+            elif choice == 1:
+                print("Let's get started.")
 
-            while len(library) < 11:
-                book = input("Okay! Please enter a book title: ")
-                library.append(book)
-                print(library)
-                more_books = add_more()
+                while len(library) < 11:
+                    book = input("Okay! Please enter a book title: ")
+                    library.append(book)
+                    print(library)
+                    more_books = add_more()
 
-        else:
-            print("I'm sorry, that's not a valid answer. Please try again.")
-            choice = menu()
+                    if more_books == 1:
+                        continue
+                    elif more_books == 2 or len(library) >= 11:
+                        print("Here is your current book club library:")
+                        for book in library:
+                            print(book)
+                        print("Thank you for your service!")
+                        print("See you next time!")
+                        break
+            else:
+                print("That wasn't on the menu. Please try again.")
+                choice = menu()
+    except ValueError:
+        print("I'm sorry, that's not a valid answer. Please try again.")
+        choice = menu()
 
 
 main()
