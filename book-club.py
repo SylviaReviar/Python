@@ -26,7 +26,7 @@ def menu():
     print("   1. Yes")
     print("   2. No")
 
-    choice = int(input())
+    choice = int(input("Please enter 1 or 2: "))
 
     return choice
 
@@ -34,16 +34,18 @@ def menu():
 def main():
 
     choice = menu()
+    library = []
 
     while True:
         if choice == 2:
             print("See you next time!")
             break
         elif choice == 1:
-            books = []
+            print("Let's get started.")
 
-            while len(books) < 11:
-                books = input("Okay! Please enter a book title: ")
+            while len(library) < 11:
+                book = input("Okay! Please enter a book title: ")
+                library.append(book)
 
         else:
             print("I'm sorry, that's not a valid answer. Please try again.")
