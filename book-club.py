@@ -74,7 +74,10 @@ def main():
 
                 while len(library) < 11:
                     book = input("Okay! Please enter a book title: ")
+                    book = book.lower()
+                    book = book.title()
                     library.append(book)
+                    library = sorted(library)
                     print(library)
                     more_books = add_more()
 
