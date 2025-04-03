@@ -53,7 +53,6 @@ def add_more():
                 break
             else:
                 print("That wasn't on the menu. Please try again.")
-                add_more()
     except ValueError:
         print("That's not a valid answer. Please try again.")
         add_more()
