@@ -24,7 +24,7 @@
 
     """
 
-POKEMON_NAMES = [
+pokemon_names = [
     "bulbasaur",
     "ivysaur",
     "venusaur",
@@ -1071,17 +1071,19 @@ def main():
     game_over = False
 
     while game_over = False:
-        my_turn = random.choice(POKEMON_NAMES)
+        my_turn = random.choice(pokemon_names)
         print(my_turn.title)
         last_letter = my_turn[-1] 
         # I'm not entirely sure if we've learned this? 
         # It feels like we have but also if we haven't, I learned this from ChatGPT and I'm sorry. 
         # Please don't let that disqualify me for cheating.
-        POKEMON_NAMES
+        pokemon_names.remove(my_turn)
+        guessed_pokemon.append(my_turn)
         
         print(f"Your Pokemon's name should start with the letter {last_letter}.")
 
         your_turn = input("What's your Pokemon?: ")
         your_turn.lower
+        
 
 main()
