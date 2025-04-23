@@ -21,9 +21,9 @@
     The issue is, this might be pretty difficult.
     I may ask ChatGPT for help setting up a step-by-step plan for this.
 
-
     """
 
+import random
 pokemon_names = [
     "bulbasaur",
     "ivysaur",
@@ -379,7 +379,7 @@ pokemon_names = [
     "shuppet",
     "banette",
     "duskull",
-    'dusclops",
+    "dusclops",
     "tropius",
     "chimecho",
     "absol",
@@ -1049,10 +1049,9 @@ pokemon_names = [
     "iron crown",
     "terapagos",
     "pecharunt"
-    ]
+]
 
 guessed_pokemon = []
-import random
 
 
 def greeting():
@@ -1067,23 +1066,59 @@ def greeting():
     print("But the game will be challenging and fun nonetheless!")
     print("Are you ready? Let's begin!")
 
+
 def main():
     game_over = False
 
-    while game_over = False:
-        my_turn = random.choice(pokemon_names)
-        print(my_turn.title)
-        last_letter = my_turn[-1] 
-        # I'm not entirely sure if we've learned this? 
-        # It feels like we have but also if we haven't, I learned this from ChatGPT and I'm sorry. 
-        # Please don't let that disqualify me for cheating.
-        pokemon_names.remove(my_turn)
-        guessed_pokemon.append(my_turn)
-        
-        print(f"Your Pokemon's name should start with the letter {last_letter}.")
+    while game_over == False:
+        try:
+            my_turn = random.choice(pokemon_names)
+            print(my_turn.title())
+            last_letter = my_turn[-1]
+            # I'm not entirely sure if we've learned this?
+            # It feels like we have but also if we haven't, I learned this from ChatGPT and I'm sorry.
+            # Please don't let that disqualify me for cheating.
+            pokemon_names.remove(my_turn)
+            guessed_pokemon.append(my_turn)
 
-        your_turn = input("What's your Pokemon?: ")
-        your_turn.lower
-        
+            print(
+                f"Your Pokemon's name should start with the letter {last_letter.upper()}.")
+
+            # Let's assume this is the list of Pokémon names
+            # In her code, this would already be defined earlier
+            # pokemon_names = [...]
+
+            def get_random_pokemon_starting_with(letter):
+                # Use a list comprehension to filter names that start with the given letter (case-insensitive)
+                matching_names = [
+                    name for name in pokemon_names if name.lower().startswith(letter.lower())]
+
+                # Handle the case where no matching names are found
+                if not matching_names:
+                    return None
+
+                # Choose a random one from the list of matches
+                return random.choice(matching_names)
+
+            # Example usage:
+            letter = "s"
+            random_pokemon = get_random_pokemon_starting_with(letter)
+
+            if random_pokemon:
+                print(
+                    f"A random Pokémon that starts with '{letter}' is: {random_pokemon}")
+            else:
+                print(f"Sorry, no Pokémon found that start with '{letter}'.")
+
+            your_turn = input("What's your Pokemon?: ")
+            your_turn = your_turn.lower()
+            pokemon_names.remove(your_turn)
+            guessed_pokemon.append(your_turn)
+            last_letter = your_turn[-1]
+
+        except IndexError:
+            print("That's not a Pokemon. Maybe you spelled it wrong?")
+            print("Please try again.")
+
 
 main()
