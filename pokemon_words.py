@@ -24,6 +24,8 @@
     """
 
 import random
+import string
+
 pokemon_names = [
     "bulbasaur",
     "ivysaur",
@@ -52,7 +54,7 @@ pokemon_names = [
     "pikachu",
     "raichu",
     "sandshrew",
-    "sandslas",
+    "sandslash",
     "nidoran",
     "nidorina",
     "nidoqueen",
@@ -256,7 +258,6 @@ pokemon_names = [
     "kingdra",
     "phanpy",
     "donphan",
-    "porygon2",
     "stantler",
     "smeargle",
     "tyrogue",
@@ -795,7 +796,6 @@ pokemon_names = [
     "sandygast",
     "palossand",
     "pyukumuku",
-    "type: null",
     "silvally",
     "minior",
     "komala",
@@ -1056,59 +1056,62 @@ guessed_pokemon = []
 
 def greeting():
     print("Hello! Welcome to the Pokemon Word Game!")
-    print("\nThe rules are simple: We will randomly generate an existing Pokemon out of the current 1024.")
-    print("(We count Nidoran as a single Pokemon.)")
-    print("Your job will be to name a Pokemon whose name starts with the last letter of the generated Pokemon.")
+    print("\nThe rules are simple: We will randomly generate an existing Pokemon out of the current 1022.")
+    print("(A few Pokemon unfortunately couldn't make it to play the game with us.)")
+    print("\nYour job will be to name a Pokemon whose name starts with the last letter of the generated Pokemon.")
     print("Then we will generate another starting with the last letter of your input.")
     print("The game will go back and forth like this until you guess a duplicate.")
     print("This will count as a disqualification.")
-    print("\nDue to the nature of the vocabulary of Pokemon, it's impossible to win.")
-    print("But the game will be challenging and fun nonetheless!")
-    print("Are you ready? Let's begin!")
+    print("\nAre you ready? Let's begin!")
+
+# This function is a code from ChatGPT:
+# Let's assume this is the list of Pokémon names
+   # In her code, this would already be defined earlier
+   # pokemon_names = [...]
+
+
+def get_random_pokemon_starting_with(letter):
+    # Use a list comprehension to filter names that start with the given letter (case-insensitive)
+    matching_names = [
+        name for name in pokemon_names if name.lower().startswith(letter.lower())]
+
+    # Handle the case where no matching names are found
+    if not matching_names:
+        return None
+
+    # Choose a random one from the list of matches
+    return random.choice(matching_names)
+
+    # Example usage:
+    letter = random.choice(string.ascii_lowercase)
+
+    random_pokemon = get_random_pokemon_starting_with(letter)
+    if random_pokemon:
+        print(random_pokemon.title())
+    else:
+        print(f"No more Pokemon start with the letter '{letter.upper()}'.")
+        print(f"That means you win!!")
 
 
 def main():
+    greeting()
     game_over = False
+    player_mistakes = 0
+
+    my_turn = random.choice(pokemon_names)
+    print(my_turn.title())
+    last_letter = my_turn[-1]
+    # I'm not entirely sure if we've learned this?
+    # It feels like we have but also if we haven't, I learned this from ChatGPT and I'm sorry.
+    # Please don't let that disqualify me for cheating.
+    pokemon_names.remove(my_turn)
+    guessed_pokemon.append(my_turn)
 
     while game_over == False:
         try:
-            my_turn = random.choice(pokemon_names)
-            print(my_turn.title())
-            last_letter = my_turn[-1]
-            # I'm not entirely sure if we've learned this?
-            # It feels like we have but also if we haven't, I learned this from ChatGPT and I'm sorry.
-            # Please don't let that disqualify me for cheating.
-            pokemon_names.remove(my_turn)
-            guessed_pokemon.append(my_turn)
 
             print(
                 f"Your Pokemon's name should start with the letter {last_letter.upper()}.")
-
-            # Let's assume this is the list of Pokémon names
-            # In her code, this would already be defined earlier
-            # pokemon_names = [...]
-
-            def get_random_pokemon_starting_with(letter):
-                # Use a list comprehension to filter names that start with the given letter (case-insensitive)
-                matching_names = [
-                    name for name in pokemon_names if name.lower().startswith(letter.lower())]
-
-                # Handle the case where no matching names are found
-                if not matching_names:
-                    return None
-
-                # Choose a random one from the list of matches
-                return random.choice(matching_names)
-
-            # Example usage:
-            letter = "s"
-            random_pokemon = get_random_pokemon_starting_with(letter)
-
-            if random_pokemon:
-                print(
-                    f"A random Pokémon that starts with '{letter}' is: {random_pokemon}")
-            else:
-                print(f"Sorry, no Pokémon found that start with '{letter}'.")
 
             your_turn = input("What's your Pokemon?: ")
             your_turn = your_turn.lower()
@@ -1116,9 +1119,45 @@ def main():
             guessed_pokemon.append(your_turn)
             last_letter = your_turn[-1]
 
+            my_turn = get_random_pokemon_starting_with(last_letter)
+
+            if my_turn is None:
+                print(
+                    f"No Pokémon left starting with {last_letter.upper()}. You win!")
+                game_over = True
+            else:
+                print(f"My turn. {my_turn.title()}")
+                pokemon_names.remove(my_turn)
+                guessed_pokemon.append(my_turn)
+                last_letter = my_turn[-1]
+
         except IndexError:
             print("That's not a Pokemon. Maybe you spelled it wrong?")
-            print("Please try again.")
+            player_mistakes += 1
+            if player_mistakes >= 5:
+                print("You couldn't think of a Pokemon. You lose!")
+                break
+            else:
+                print(
+                    f"You have {5 - player_mistakes} attempts left. Try again!")
+        except ValueError:
+            print("That's not a Pokemon. Maybe you spelled it wrong?")
+            player_mistakes += 1
+            if player_mistakes >= 5:
+                print("You couldn't think of a Pokemon. You lose!")
+                break
+            else:
+                print(
+                    f"You have {5 - player_mistakes} attempts left. Try again!")
+        except Exception as e:
+            print(e)
+            player_mistakes += 1
+            if player_mistakes >= 5:
+                print("You couldn't think of a Pokemon. You lose!")
+                break
+            else:
+                print(
+                    f"You have {5 - player_mistakes} attempts left. Try again!")
 
 
 main()
