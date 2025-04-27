@@ -463,7 +463,7 @@ pokemon_names = [
     "bronzor",
     "bronzong",
     "bonsly",
-    "mime jr.",
+    "mime jr",
     "happiny",
     "chatot",
     "spiritomb",
@@ -1132,7 +1132,7 @@ def main():
                 last_letter = my_turn[-1]
 
         except IndexError:
-            print("That's not a Pokemon. Maybe you spelled it wrong?")
+            print("That's not in the list. Maybe you spelled it wrong?")
             player_mistakes += 1
             if player_mistakes >= 5:
                 print("You couldn't think of a Pokemon. You lose!")
@@ -1141,7 +1141,7 @@ def main():
                 print(
                     f"You have {5 - player_mistakes} attempts left. Try again!")
         except ValueError:
-            print("That's not a Pokemon. Maybe you spelled it wrong?")
+            print("That's not in the list. Maybe you spelled it wrong?")
             player_mistakes += 1
             if player_mistakes >= 5:
                 print("You couldn't think of a Pokemon. You lose!")
